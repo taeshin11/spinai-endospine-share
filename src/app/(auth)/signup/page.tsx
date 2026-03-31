@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import { trackEvent } from "@/lib/tracking";
 import { SPECIALTIES } from "@/types/database";
+import { useTranslation } from "@/i18n";
 import { Eye, EyeOff, UserPlus } from "lucide-react";
 
 export default function SignupPage() {
@@ -24,6 +25,7 @@ export default function SignupPage() {
   const [success, setSuccess] = useState(false);
   const router = useRouter();
   const supabase = createClient();
+  const { t } = useTranslation();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -36,11 +38,11 @@ export default function SignupPage() {
     setError("");
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
+      setError(t("auth.passwordMismatch"));
       return;
     }
     if (formData.password.length < 8) {
-      setError("Password must be at least 8 characters");
+      setError(t("auth.passwordLength"));
       return;
     }
 
@@ -99,11 +101,10 @@ export default function SignupPage() {
             <UserPlus className="h-8 w-8" />
           </div>
           <h2 className="mt-4 text-2xl font-bold text-gray-900">
-            Account Created!
+            {t("auth.accountCreated")}
           </h2>
           <p className="mt-2 text-gray-600">
-            Your account is pending verification. You&apos;ll be able to browse
-            the platform once an administrator approves your credentials.
+            {t("auth.pendingVerification")}
           </p>
         </div>
       </div>
@@ -123,10 +124,10 @@ export default function SignupPage() {
             </span>
           </Link>
           <h1 className="mt-6 text-2xl font-bold text-gray-900">
-            Join EndoSpine Share
+            {t("auth.joinTitle")}
           </h1>
           <p className="mt-2 text-sm text-gray-500">
-            Verify your credentials to access the platform
+            {t("auth.verifyCredentials")}
           </p>
         </div>
 

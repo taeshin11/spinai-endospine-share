@@ -14,6 +14,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://endospine-share.vercel.app"),
   title: {
     default: "EndoSpine Share — Spinal Endoscopy Video Platform",
     template: "%s | EndoSpine Share",
