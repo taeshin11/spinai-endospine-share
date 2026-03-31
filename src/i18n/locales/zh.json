@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "gallery": "视频库",
+    "myVideos": "我的视频",
+    "upload": "上传",
+    "signIn": "登录",
+    "joinCommunity": "加入社区",
+    "signOut": "退出"
+  },
+  "hero": {
+    "badge": "HIPAA合规 • 安全 • 仅限认证外科医生",
+    "title1": "",
+    "titleHighlight": "脊柱内镜",
+    "title2": "教育的全球平台",
+    "subtitle": "与全球认证的医疗专业人员一起分享、发现和学习脊柱内镜手术视频。通过同行评审的案例研究提升您的技术。",
+    "cta": "加入社区",
+    "learnMore": "了解更多"
+  },
+  "stats": { "videos": "分享的视频", "surgeons": "认证外科医生", "countries": "国家", "views": "视频观看" },
+  "howItWorks": {
+    "title": "使用方法",
+    "subtitle": "三个简单步骤即可开始",
+    "step1Title": "注册并认证",
+    "step1Desc": "创建账户并验证您的医疗资质。只有经过认证的脊柱外科医生才能访问平台。",
+    "step2Title": "上传您的案例",
+    "step2Desc": "分享经过去标识化的手术视频及详细的手术元数据。患者隐私是我们的首要任务。",
+    "step3Title": "分享与学习",
+    "step3Desc": "浏览全球外科医生的技术，对案例发表评论，建立您的专业网络。"
+  },
+  "featured": { "title": "精选手术视频", "subtitle": "预览我们不断增长的内镜脊柱手术案例库", "signInToWatch": "登录观看", "accessLibrary": "注册以访问完整视频库" },
+  "security": {
+    "title": "安全与患者隐私优先",
+    "subtitle": "从第一天起就以医疗合规为核心",
+    "items": ["HIPAA合规平台设计", "强制去标识化", "仅限认证外科医生", "教育水印", "不存储患者数据", "加密视频传输", "下载保护", "完整审计追踪"]
+  },
+  "testimonials": { "title": "全球脊柱外科医生的信赖之选" },
+  "cta": { "title": "准备好提升您的实践了吗？", "subtitle": "加入一个不断壮大的脊柱内镜外科医生社区，共同分享知识、推动领域发展。", "button": "申请访问" },
+  "footer": { "description": "脊柱内镜教育的全球平台。与认证的医疗专业人员一起分享、发现和学习手术视频。", "platform": "平台", "about": "关于", "videoGallery": "视频库", "blog": "博客", "legal": "法律", "privacyPolicy": "隐私政策", "termsOfService": "服务条款", "businessInquiries": "商务咨询", "suggestImprovement": "提出改进建议", "copyright": "EndoSpine Share. 保留所有权利。", "builtBy": "制作" },
+  "auth": { "welcomeBack": "欢迎回来", "signInAccess": "登录以访问视频库", "email": "电子邮件", "password": "密码", "signingIn": "登录中...", "noAccount": "还没有账户？", "signUp": "注册", "joinTitle": "加入EndoSpine Share", "verifyCredentials": "验证您的资质以访问平台", "fullName": "全名", "licenseNumber": "医师执照号码", "institution": "机构 / 医院", "specialty": "专业", "selectSpecialty": "选择您的专业", "confirmPassword": "确认密码", "createAccount": "创建账户", "creatingAccount": "创建账户中...", "hasAccount": "已有账户？", "accountCreated": "账户已创建！", "pendingVerification": "您的账户正在等待验证。管理员批准您的资质后即可获得完整访问权限。", "passwordMismatch": "密码不匹配", "passwordLength": "密码至少需要8个字符" },
+  "dashboard": { "title": "我的仪表板", "uploadVideo": "上传视频", "videosUploaded": "已上传视频", "totalViews": "总观看次数", "accountStatus": "账户状态", "verified": "已认证", "pending": "待审核", "myVideos": "我的视频", "noVideosYet": "暂无视频", "noVideosDesc": "上传您的第一个手术视频与社区分享。", "verificationPending": "认证待审核", "verificationPendingDesc": "您的账户正在等待管理员验证。批准后即可获得完整访问权限。", "verificationRejected": "认证被拒绝", "verificationRejectedDesc": "如需帮助，请联系taeshinkim11@gmail.com。" },
+  "upload": { "title": "上传视频", "subtitle": "与社区分享去标识化的手术视频", "dropzone": "将视频拖放到此处，或点击浏览", "dropzoneFormats": "MP4、MOV或WebM。最大500MB。", "uploading": "上传中...", "videoTitle": "视频标题", "procedureType": "手术类型", "selectProcedure": "选择手术", "spineLevel": "脊柱节段", "selectLevel": "选择节段", "description": "描述 / 手术记录", "tags": "标签", "consentTitle": "患者去标识化与知情同意确认", "consentDesc": "我确认此视频中所有患者身份信息已被移除，并已获得适当的教育共享同意。", "uploadButton": "上传视频", "selectFile": "请选择视频文件。", "consentRequired": "上传前必须确认患者去标识化和知情同意。" },
+  "gallery": { "title": "视频库", "search": "搜索视频...", "filters": "筛选", "allProcedures": "所有手术", "allLevels": "所有脊柱节段", "newest": "最新", "mostViewed": "最多观看", "mostLiked": "最多点赞", "clearFilters": "清除筛选", "noVideos": "未找到视频", "noVideosSearch": "请尝试调整搜索条件或筛选。", "noVideosEmpty": "成为第一个上传手术视频的人！" },
+  "video": { "views": "次观看", "save": "收藏", "saved": "已收藏", "report": "举报", "discussion": "讨论", "addComment": "添加评论...", "relatedVideos": "相关视频", "noRelated": "未找到相关视频。", "notFound": "视频未找到", "watermark": "仅供教育使用 — EndoSpine Share" },
+  "surgeon": { "videos": "视频", "uploadedVideos": "已上传视频", "noVideos": "暂无上传视频。", "notFound": "未找到外科医生" },
+  "collections": { "title": "我的收藏夹", "newCollection": "新建收藏夹", "collectionName": "收藏夹名称", "descriptionOptional": "描述（可选）", "create": "创建", "noCollections": "暂无收藏夹", "noCollectionsDesc": "创建收藏夹来整理您喜爱的视频。", "videosCount": "个视频" },
+  "feedback": { "title": "发送反馈", "emailOptional": "电子邮件（可选）", "placeholder": "您希望EndoSpine Share如何改进？", "send": "发送反馈", "thanks": "感谢您的反馈！", "sendEmail": "请发送刚打开的邮件以完成提交。" },
+  "admin": { "title": "管理面板", "enterPassword": "输入管理员密码以继续", "password": "管理员密码", "signIn": "登录", "logout": "退出", "totalUsers": "总用户数", "pendingApprovals": "待审批", "totalVideos": "总视频数", "totalViews": "总观看数", "users": "用户", "videos": "视频", "audit": "审计", "reports": "举报", "analytics": "分析", "name": "姓名", "email": "邮箱", "specialty": "专业", "institution": "机构", "status": "状态", "actions": "操作", "approve": "批准", "reject": "拒绝", "surgeon": "外科医生", "type": "类型", "views": "观看", "date": "日期", "delete": "删除", "action": "操作", "userId": "用户ID", "videoId": "视频ID", "noReports": "暂无举报", "reporter": "举报者", "reason": "原因", "registrationOverTime": "注册趋势", "topProcedureTypes": "热门手术类型" },
+  "about": { "title": "关于EndoSpine Share", "intro": "EndoSpine Share是专为脊柱内镜外科医生设计的安全、HIPAA合规的视频共享平台。我们的使命是使手术教育的获取民主化，促进医疗专业人员之间的全球合作。", "privacyFirst": "患者隐私优先", "privacyFirstDesc": "上传的每个视频都必须完全去标识化。我们从不存储患者数据，所有内容都带有教育用途水印。", "verifiedCommunity": "认证社区", "verifiedCommunityDesc": "只有经过确认资质的认证医疗专业人员才能访问平台，确保高质量的讨论和内容。", "globalReach": "全球影响力", "globalReachDesc": "来自30多个国家的外科医生分享技术，实现跨文化学习和领域进步。", "excellence": "教育卓越性", "excellenceDesc": "精心策划的资源库涵盖从基础技术到高级病例的内镜脊柱手术全谱系。", "builtBySurgeons": "外科医生打造，为外科医生服务", "builtBySurgeonsDesc": "EndoSpine Share由理解手术视频教育独特需求的脊柱专家创建。", "continuousLearning": "持续学习", "continuousLearningDesc": "通过线程讨论、收藏夹和通知功能支持持续的专业发展。", "spinaiTitle": "SPINAI制作", "spinaiDesc": "SPINAI致力于通过技术和创新推动脊柱手术的发展。EndoSpine Share是我们将尖端网络技术与医疗专业知识相结合的旗舰手术教育平台。", "contact": "商务咨询请联系" },
+  "blog": { "title": "脊柱内镜博客", "subtitle": "内镜脊柱手术技术与教育的最新见解", "readMore": "阅读更多" }
+}

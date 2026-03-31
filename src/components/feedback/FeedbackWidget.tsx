@@ -3,39 +3,33 @@
 import { useState } from "react";
 import { MessageSquare, X, Send } from "lucide-react";
 import { trackEvent } from "@/lib/tracking";
+import { useTranslation } from "@/i18n";
 
 export default function FeedbackWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim()) return;
 
-    // Track the feedback event
-    await trackEvent({
-      event: "feedback_submitted",
-      email,
-      name: message.slice(0, 50),
-    });
+    // Track + log (fire-and-forget)
+    trackEvent({ event: "feedback_submitted", email, name: message.slice(0, 50) }).catch(() => {});
+    fetch("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, message }),
+    }).catch(() => {});
 
-    // Send via mailto as fallback
-    const mailtoLink = `mailto:taeshinkim11@gmail.com?subject=EndoSpine Share Feedback&body=${encodeURIComponent(
+    // Open mailto as the PRIMARY email delivery
+    window.location.href = `mailto:taeshinkim11@gmail.com?subject=${encodeURIComponent(
+      "EndoSpine Share Feedback"
+    )}&body=${encodeURIComponent(
       `Feedback from: ${email || "Anonymous"}\n\n${message}`
     )}`;
-
-    // Try API route first
-    try {
-      await fetch("/api/feedback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, message }),
-      });
-    } catch {
-      window.open(mailtoLink, "_blank");
-    }
 
     setSubmitted(true);
     setTimeout(() => {
@@ -43,7 +37,7 @@ export default function FeedbackWidget() {
       setIsOpen(false);
       setMessage("");
       setEmail("");
-    }, 2000);
+    }, 3000);
   };
 
   return (
@@ -52,7 +46,7 @@ export default function FeedbackWidget() {
         <div className="mb-3 w-80 rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
           <div className="mb-3 flex items-center justify-between">
             <h3 className="text-sm font-semibold text-gray-900">
-              Send Feedback
+              {t("feedback.title")}
             </h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -63,22 +57,27 @@ export default function FeedbackWidget() {
           </div>
 
           {submitted ? (
-            <p className="py-4 text-center text-sm text-green-600">
-              Thank you for your feedback!
-            </p>
+            <div className="py-4 text-center">
+              <p className="text-sm font-medium text-green-600">
+                {t("feedback.thanks")}
+              </p>
+              <p className="mt-1 text-xs text-gray-500">
+                {t("feedback.sendEmail")}
+              </p>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email (optional)"
+                placeholder={t("feedback.emailOptional")}
                 className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#4DA8B2] focus:outline-none focus:ring-1 focus:ring-[#4DA8B2]"
               />
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="How can we improve EndoSpine Share?"
+                placeholder={t("feedback.placeholder")}
                 rows={3}
                 required
                 className="w-full resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#4DA8B2] focus:outline-none focus:ring-1 focus:ring-[#4DA8B2]"
@@ -88,7 +87,7 @@ export default function FeedbackWidget() {
                 className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#4DA8B2] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d8a93] transition-colors"
               >
                 <Send className="h-4 w-4" />
-                Send Feedback
+                {t("feedback.send")}
               </button>
             </form>
           )}

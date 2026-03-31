@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Bell, User, LogOut, Video, Search, Sun, Moon } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 import { useTheme } from "@/hooks/useTheme";
+import { useTranslation } from "@/i18n";
 import type { Profile } from "@/types/database";
 
 export default function Navbar() {
@@ -15,6 +16,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const supabase = createClient();
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const getUser = async () => {
@@ -58,9 +60,9 @@ export default function Navbar() {
 
   const navLinks = user
     ? [
-        { href: "/gallery", label: "Gallery", icon: Video },
-        { href: "/dashboard", label: "My Videos", icon: User },
-        { href: "/upload", label: "Upload", icon: Video },
+        { href: "/gallery", label: t("nav.gallery"), icon: Video },
+        { href: "/dashboard", label: t("nav.myVideos"), icon: User },
+        { href: "/upload", label: t("nav.upload"), icon: Video },
       ]
     : [];
 
@@ -140,13 +142,13 @@ export default function Navbar() {
                   href="/login"
                   className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
                 >
-                  Sign In
+                  {t("nav.signIn")}
                 </Link>
                 <Link
                   href="/signup"
                   className="rounded-lg bg-[#4DA8B2] px-4 py-2 text-sm font-medium text-white hover:bg-[#3d8a93] transition-colors"
                 >
-                  Join the Community
+                  {t("nav.joinCommunity")}
                 </Link>
               </>
             )}
@@ -188,14 +190,14 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50"
                 >
-                  Sign In
+                  {t("nav.signIn")}
                 </Link>
                 <Link
                   href="/signup"
                   onClick={() => setIsOpen(false)}
                   className="block rounded-lg bg-[#4DA8B2] px-3 py-2 text-center text-sm font-medium text-white"
                 >
-                  Join the Community
+                  {t("nav.joinCommunity")}
                 </Link>
               </>
             )}
@@ -208,7 +210,7 @@ export default function Navbar() {
                 className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50"
               >
                 <LogOut className="h-4 w-4" />
-                Sign Out
+                {t("nav.signOut")}
               </button>
             )}
           </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import Providers from "@/components/Providers";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -84,7 +85,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#F8F9FA] font-[family-name:var(--font-dm-sans)] text-gray-900 antialiased">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
