@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase";
 import { formatDate, formatViewCount } from "@/lib/utils";
 import { trackEvent } from "@/lib/tracking";
 import type { Video, Profile, Comment } from "@/types/database";
+import { stripHtml } from "@/utils/sanitize";
 import {
   ThumbsUp,
   Bookmark,
@@ -165,12 +166,13 @@ export default function VideoDetailPage({
     } = await supabase.auth.getUser();
     if (!user) return;
 
+    const sanitizedComment = stripHtml(newComment.trim());
     const { data } = await supabase
       .from("comments")
       .insert({
         video_id: id,
         author_id: user.id,
-        content: newComment.trim(),
+        content: sanitizedComment,
       })
       .select("*, profiles(full_name, institution, avatar_url)")
       .single();

@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Bell, User, LogOut, Video, Search } from "lucide-react";
+import { Menu, X, Bell, User, LogOut, Video, Search, Sun, Moon } from "lucide-react";
 import { createClient } from "@/lib/supabase";
+import { useTheme } from "@/hooks/useTheme";
 import type { Profile } from "@/types/database";
 
 export default function Navbar() {
@@ -13,6 +14,7 @@ export default function Navbar() {
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
   const supabase = createClient();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const getUser = async () => {
@@ -93,6 +95,13 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800"
+              title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            >
+              {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </button>
             {loading ? (
               <div className="h-8 w-20 animate-pulse rounded-lg bg-gray-200" />
             ) : user ? (

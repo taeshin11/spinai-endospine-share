@@ -1,6 +1,6 @@
 [
   { "id": 1, "feature": "Project scaffolding (Next.js + Tailwind + Supabase)", "status": "done", "priority": "P0", "milestone": "M1" },
-  { "id": 2, "feature": "Supabase setup (Auth, Database tables, Storage buckets)", "status": "in-progress", "priority": "P0", "milestone": "M1" },
+  { "id": 2, "feature": "Supabase setup (Auth, Database tables, Storage buckets)", "status": "done", "priority": "P0", "milestone": "M1" },
   { "id": 3, "feature": "Landing page (Hero, How It Works, Stats, Footer)", "status": "done", "priority": "P0", "milestone": "M1" },
   { "id": 4, "feature": "SEO setup (meta tags, OG tags, sitemap, robots.txt, JSON-LD)", "status": "done", "priority": "P0", "milestone": "M1" },
   { "id": 5, "feature": "Auth flow (signup, login, logout, session management)", "status": "done", "priority": "P0", "milestone": "M2" },
@@ -20,13 +20,13 @@
   { "id": 19, "feature": "Business inquiry contact form in footer", "status": "done", "priority": "P1", "milestone": "M4" },
   { "id": 20, "feature": "SPINAI branding badge in footer", "status": "done", "priority": "P1", "milestone": "M1" },
   { "id": 21, "feature": "Privacy policy + Terms of Service pages", "status": "done", "priority": "P1", "milestone": "M1" },
-  { "id": 22, "feature": "Dark mode toggle", "status": "pending", "priority": "P2", "milestone": "M5" },
+  { "id": 22, "feature": "Dark mode toggle", "status": "done", "priority": "P2", "milestone": "M5" },
   { "id": 23, "feature": "Blog/SEO content pages", "status": "done", "priority": "P2", "milestone": "M5" },
   { "id": 24, "feature": "Audit log (video view tracking)", "status": "done", "priority": "P1", "milestone": "M3" },
   { "id": 25, "feature": "Watermark overlay on videos", "status": "done", "priority": "P1", "milestone": "M3" },
   { "id": 26, "feature": "Content Security Policy + security headers", "status": "done", "priority": "P1", "milestone": "M2" },
   { "id": 27, "feature": "Responsive design polish + cross-browser testing", "status": "done", "priority": "P0", "milestone": "M4" },
-  { "id": 28, "feature": "Live site QA", "status": "pending", "priority": "P0", "milestone": "M5" },
-  { "id": 29, "feature": "Performance optimization (Lighthouse 90+)", "status": "pending", "priority": "P1", "milestone": "M5" },
+  { "id": 28, "feature": "Live site QA", "status": "done", "priority": "P0", "milestone": "M5" },
+  { "id": 29, "feature": "Performance optimization (Lighthouse 90+)", "status": "done", "priority": "P1", "milestone": "M5" },
   { "id": 30, "feature": "Report inappropriate content flow", "status": "done", "priority": "P2", "milestone": "M5" }
 ]
